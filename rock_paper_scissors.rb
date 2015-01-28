@@ -31,27 +31,16 @@ the innocent civilians."
   msg2 = "The computer wins! The future of humanity is doomed."
   msg3 = "You win! There is hope for mankind after all."
 
-  if user_choice == "rock" && comp_choice == "rock"
+# winner = find_winner(player, computer)
+
+  if user_choice == comp_choice
     say msg1
-  elsif user_choice == "rock" && comp_choice == "paper"
-    say msg2
-  elsif user_choice == "rock" && comp_choice == "scissors"
+  elsif (user_choice == "paper" && comp_choice) == "rock" ||
+    (user_choice == "rock" && comp_choice == "scissors") ||
+    (user_choice == "scissors" && comp_choice == "paper")
     say msg3
-  elsif user_choice == "paper" && comp_choice == "rock"
-    say msg3
-  elsif user_choice == "paper" && comp_choice =="paper"
-    say msg1
-  elsif user_choice == "paper" && comp_choice == "scissors"
-    say msg2
-  elsif user_choice == "scissors" && comp_choice == "rock"
-    say msg2
-  elsif user_choice == "scissors" && comp_choice == "paper"
-    say msg3
-  elsif user_choice == "scissors" && comp_choice == "scissors"
-    say msg1
   else
-    say "Invalid choice, eh? What are you trying to do here, \
-avoid war? Back to the front!"
+    say msg2
   end
   say "Play again? (Y/N)"
   play_again = gets.chomp.downcase
